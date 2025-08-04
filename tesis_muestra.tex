@@ -1,0 +1,484 @@
+\documentclass[letter,twoside,12pt]{book}
+\usepackage[spanish]{babel}
+\usepackage[top=1in, left=0.9in, right=1.25in, bottom=1in]{geometry}
+%\usepackage{bachelorstitlepageUNAM}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[version=4]{mhchem}
+\usepackage{times}
+\usepackage{calligra}
+\usepackage{slashed}
+\usepackage{braket}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{tabulary}
+\usepackage{url}
+\usepackage{mhchem}
+\usepackage[makeroom]{cancel}
+\spanishdecimal{.}
+\usepackage{ragged2e}
+\bibliographystyle{unsrt}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{balance}
+\usepackage[toc,page]{appendix}
+\setlength{\textwidth}{160mm}
+\setlength{\evensidemargin}{-6mm}
+\newcommand{\NOTEAC}[1]{\textcolor{blue}{ \bf[NOTE: AC -- #1 ]}}
+\newcommand{\NOTESCA}[1]{\textcolor{red}{ \bf[NOTE: SCA -- #1 ]}}
+\renewcommand{\spanishtablename}{Figura}
+\begin{document}
+\frontmatter
+\begin{titlepage}
+        \thispagestyle{empty}
+        \begin{minipage}[c][0.17\textheight][c]{0.25\textwidth}
+            \begin{center}
+                \includegraphics[width=3.5cm, height=3.5cm]{Escudo-UNAM.pdf}
+            \end{center}
+        \end{minipage}
+        \begin{minipage}[c][0.195\textheight][t]{0.75\textwidth}
+            \begin{center}
+                \vspace{0.3cm}
+                \textsc{\large Universidad Nacional Aut\'onoma de M\'exico}\\[0.5cm]
+                \vspace{0.3cm}
+                \hrule height2.5pt
+                \vspace{.2cm}
+                \hrule height1pt
+                \vspace{.8cm}
+                \textsc{Facultad de Ciencias}\\[0.5cm] %
+            \end{center}
+        \end{minipage}
+
+        \begin{minipage}[c][0.81\textheight][t]{0.25\textwidth}
+            \vspace*{5mm}
+            \begin{center}
+                \hskip2.0mm
+                \vrule width1pt height13cm 
+                \vspace{5mm}
+                \hskip2pt
+                \vrule width2.5pt height13cm
+                \hskip2mm
+                \vrule width1pt height13cm \\
+                \vspace{5mm}
+                \includegraphics[height=4.0cm]{Escudo-FCIENCIAS.pdf}
+            \end{center}
+        \end{minipage}
+        \begin{minipage}[c][0.81\textheight][t]{0.75\textwidth}
+            \begin{center}
+                \vspace{1cm}
+
+                {\large\scshape Tesis de muestra para los miembros del canal}\\[.2in]
+
+                \vspace{2cm}            
+
+                \textsc{\LARGE T\hspace{1.5cm}E\hspace{1.5cm}S\hspace{1.5cm}I\hspace{1.5cm}S}\\[0.5cm]
+                \textsc{\large que para obtener el t\'itulo de:}\\[0.5cm]
+                \textsc{\large Físico}\\[0.5cm]
+                \textsc{\large presenta:}\\[0.5cm]
+                \textsc{\large {Armónicos Esféricos}}\\[2cm]          
+
+                \vspace{0.5cm}
+
+                {\large\scshape Tutora:\\[0.3cm] {Sydney Sweeney}}\\[.2in]
+
+                \vspace{0.5cm}
+
+                \large{Appeldoorn, }{}{2025}
+            \end{center}
+        \end{minipage}
+    \end{titlepage}
+
+
+
+%---------------------------------
+
+\chapter*{}
+\begin{flushleft}
+  \emph{A mis padres y hermanos.}
+  
+  \emph{A mis suscriptores.}
+  
+  \emph{A los miembros del canal.}
+  
+  \emph{A los conejitos, los cerditos y los cuyitos.}
+
+  \emph{A 3b1b, Quantum Fracture, Javier Santaolalla, Aldo Bartra, Sydney Sweeney, Dross, Pewdiepie, Rebecca Gayheart, Tania Raymonde, Vania Bludau, Elizabeth Olsen y Daniella Chávez.}
+  
+  \emph{A la UNAM.}
+
+\end{flushleft}
+\chapter*{Resumen}
+Esta es una tesis de muestra para los Miembros del Canal de nivel Doctorado de \textit{Armónicos Esféricos} (AE) que consiste mostrar la estructura general de una tesis, así como el uso de referencias, bibliografía, formato, tablas y ecuaciones en Latex.
+
+El documento tiene como referencia el tema del proceso de construcción de un canal de YouTube y su idiosincrasia.
+
+Sin embargo, no debe tomarse como una verdadera estructura de tesis. Si realmente quisiera escribir una tesis sobre crear un canal divulgativo debo estudiar con mucho cuidado la presencia y el
+orden de los contenidos. Los nombres de los capítulos listados en el índice son sólo decorativos.
+
+El objetivo de esta tesis es mostrar cómo hacer una tesis xD.
+
+\tableofcontents{}
+\mainmatter
+\balance
+\chapter{Introducción} 
+Un canal de YouTube de divulgación es una responsabilidad enorme, no es simplemente hablar tonterías ante la cámara. Se debe saber del tema y, sobre todo, \textit{saber explicarlo}.
+
+Se debe saber de qué se quiere hablar y el target de audiencia para que el contenido del canal se vea consistente y no parezca que hablas de todo y a la vez de nada.  
+
+No es recomendable definir totalmente la estética o la identidad visual desde el principio, pues este se adapatará con el tiempo. Pero sí se debe tener una idea y estructura general para dotar al canal de identidad y vida propia y que no parezca un canal genérico de ciencia.
+
+Aquí es donde aparece una cita en esta muestra de tesis xD ~\cite{Lancaster}.
+
+La teoría utilizada será simplemente la toma de inspiraciones visuales o de estilo de otros YouTubers, la definición de elementos que estarán presentes en el canal, que le darán su ``alma'' y las fuentes de información recurrentes para los videos.
+
+Es, por tanto, de interés conocer cómo hacer un canal de YouTube que sea interesante para las personas y que no sea una copia de los grandes divulgadores pero tampoco una clase de universidad.
+
+En esta tesis de muestra se hablará de la construcción del canal \textit{Armónicos Esféricos} en el orden ya mencionado.
+ 
+En el Capítulo \ref{cap2} se introducirán los elementos clave en la identidad del canal, su parafernalia y la inspiración.
+ 
+En el Capítulo \ref{cap3} se presentará el estudio de las herramientas necesarias para la construcción del video como tal. Esto incluye herramientas informáticas de animación y edición, así como la escritura de guiones y la planeación del contenido.
+ 
+En el capítulo \ref{cap4} se profundizará en la actividad de subir videos propiamente dicha. Las cuentas que se deben abrir, el proceso de producción y el análisis de las métricas para el desarrollo y evolución del canal.
+
+Finalmente, en las conclusiones del capítulo \ref{cap5} se hace un resumen y una reflexión sobre lo realizado, sobre si vale la pena abrirse el canal.
+
+\textit{Nota: En esta tesis de muestra habrá muchas palabras en neerlandés e imágenes de Dross y de Sydney Sweeney. Recuerden que esto NO es un modelo válido o serio de tesis, simplemente es un cascarón para enseñar la estructura correcta de la tesis.}
+\chapter{Marco teórico}\label{cap2}
+En este capítulo se explica el marco teórico. \\
+La sección \ref{sec:dirac}.\\
+Las secciones \ref{sec:dis} y \ref{sec:tens}.\\
+La sección \ref{sec:pdf}.\\
+En la sección \ref{sec:cono} se explica.\\
+Finalmente, la sección \ref{sec:suma}.
+
+
+\section{Programación en Python}\label{sec:dirac}
+Aquí les muestro una ecuación intercalada dentro del texto: $E=\frac{p^2}{2m}+V$ entre energía y momento). 
+Esta, aunque es importante, no se le usará directamente en el texto, por eso la dejo en el texto y no le doy su propio espacio ni número.
+
+En cambio, la siguiente ecuación sí es importante, la usaré en el futuro o le haré referencia, entonces debe tener su propio párrafo y su número será 2.1 pues es la ecuación 1 del capítulo 2:
+\begin{equation}
+    (i\slashed \partial-m)\psi=0, \label{dirac}
+\end{equation}
+donde $\slashed \partial=\gamma^{\mu}\partial_{\mu}$ y $\gamma^{\mu}$ son las matrices gamma que tienen el siguiente comportamiento
+\begin{equation}
+    \{\gamma^{\mu},\gamma^{\nu}\}=2\eta^{\mu\nu}, \label{anticonm}
+\end{equation}
+y $\eta = diag(1,-1,-1,-1)$. Esto está hecho con las horribles unidades naturales xD, lo dejo así porque es casi seguro que los obliguen a usarlas. Ahora les enseño cómo ordenar las matrices. Si quieren que haya dos matrices en cada renglón, sepárenlas con el comando quad como se ve en el siguiente ejemplo:
+\begin{eqnarray}
+&&     
+\gamma^0=\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1 \\
+\end{bmatrix}, \quad
+\gamma^1=\begin{bmatrix}
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & -1 & 0 & 0 \\
+-1 & 0 & 0 & 0 \\
+\end{bmatrix},
+\nonumber \\
+&& \gamma^2=\begin{bmatrix}
+0 & 0 & 0 & -i \\
+0 & 0 & i & 0 \\
+0 & i & 0 & 0 \\
+-i & 0 & 0 & 0 \\
+\end{bmatrix}, \quad
+\gamma^3=\begin{bmatrix}
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & -1 \\
+-1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+\end{bmatrix}.\label{gamma}
+\end{eqnarray}
+Noten cómo las cuatro matrices tienen sólo un número de ecuación asignado. Esto es porque, aunque las usaré en el futuro, lo haré colectivamente, no una por una. Así que no tiene caso usar 4 etiquetas diferentes. 
+Ahora, les muestro otro ejemplo, donde haré un procedimiento en varias líneas. Aquí, lo que conectan los pasos no es un $=$ sino un $\Leftrightarrow$, pero la lógica es la misma. Los saltos de linea se consiguen con dobles diagonales invertidas y para evitar que a cada línea se le asigne un número, coloco el comando \textit{no number} antes de las diagonales. 
+Recuerden que, a un procedimiento, aunque tenga varias líneas, se le asigna sólo una etiqueta. 
+
+\begin{eqnarray}
+     (\Vec{\sigma}\cdot\Vec{p})^2 = p_0^2-m^2 \nonumber \\
+     \Leftrightarrow |\Vec{p}|^2=E^2-m^2 \nonumber \\
+     \Leftrightarrow E^2=|\Vec{p}|^2+m^2
+\end{eqnarray}
+En algunas ocasiones deberán mezclar texto normal con ecuaciones. Si escriben texto en el modo matemático de Latex, les quedará algo feo, sin espacios y en itálicas. Para evitar esto y que se vea bien diferenciado el texto del lenguaje matemático se usa el comando \textit{text} y entre llaves va el texto. Noten que a esta ecuación le puse, en el código, una etiqueta con el comando \text{label}. Eso me permite referenciarla en otro lado del texto y que sólo aparezca el número de ecuación. Estas etiquetas se actualizan ante todo cambia que hagan.
+
+\begin{equation}
+    \text{Antipartículas: } v(p)e^{ip\cdot x}=\sqrt{E+m}\begin{bmatrix}
+\frac{\Vec{\sigma}\cdot\Vec{p}}{E+m} \eta\\
+ \eta\\
+\end{bmatrix}e^{ip\cdot x} \label{antiespinor}
+\end{equation}
+Aquí introduzco la cita a un libro. En el editor de código coloco directamente la etiqueta de la cita, pero en el texto ya compilado sólo aparece el número. Estas etiquetas se actualizan ante todo cambia que hagan
+\cite{Lancaster}.
+Acá les muestro cómo escribir los kets cuánticos, las flechas de espín y las matrices columna.
+\begin{equation}
+\ket{\uparrow}_{\text{partícula}}=\chi_{\uparrow}=\begin{bmatrix}
+1\\
+0\\
+\end{bmatrix},
+\ket{\downarrow}_{\text{partícula}}=\chi_{\downarrow}=\begin{bmatrix}
+0\\
+1\\
+\end{bmatrix}
+\end{equation}
+
+En este ejemplo uso comandos para crear los símbolos de daga para transpuestos conjugados, para barras encima de letras y para las tres líneas que implican definición.
+\begin{equation}
+     \Bar{u}(p) \equiv u^{\dagger}(p)\gamma^0.
+\end{equation}
+En este otro ejemplo les muestro cómo usar la letra L estilizada para el lagrangiano, hamiltoniano y similares.
+\begin{equation}
+    \mathcal{L}=\Bar{\psi}(i\slashed \partial-m)\psi, \label{L}
+\end{equation}
+Y por último, para esta sección, les enseño cómo hacer una expresión más compleja.
+\begin{equation}
+    \hat{\psi}(x)=\int \frac{d^3p}{(2\pi)^{3/2}}\frac{1}{\sqrt{2E_p}}
+    \sum_{s=1}^2 \left[u^s(p)\hat{a}_{sp}e^{-ip\cdot x}+
+    v^s(p)\hat{b}^{\dagger}_{sp}e^{ip\cdot x}\right],
+\end{equation}
+Noten que, en muchas ocasiones se usan llaves para los comandos de Latex. Si quieren colocar llaves tal cual en el texto, por ejemplo, para anticonmutadores, deben usar una diagonal invertida antes del símbolo de llave, como acá.
+\begin{equation}
+     \{\hat{a}_p^{\dagger},\hat{a}_q^{\dagger}\}= \{\hat{a}_p,\hat{a}_q\}=0.
+\end{equation}
+Si se preguntan por qué hay consejos si el capítulo tiene Python en el título, es porque recuerden que es una tesis muestra y sólo metí títulos para rellenar.
+\section{TOP 7 perturbadores de Dross}\label{sec:dis}
+Las comillas siempre son una molestia en Latex. La mejor forma de escribirlas es con dos acentos al principio y dos apóstrofes al final, así: ``comillas''.
+Ahora, introduciré una imagen de Dross y haré la referencia aquí \ref{DISfig}. Deben usar en el texto la misma etiqueta que en la imagen y recordar subirla a Overleaf para que se vea.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Dross.jpg}\\
+  \caption{\footnotesize Imagen de ejemplo de Dross.}
+  \label{DISfig}
+\end{center}
+\end{figure}
+
+\section{Filmografía de Sydney Sweeney}\label{sec:tens}
+Acá les muestro cómo escribir los bras cuánticos. Noten la manera en la que se pueden meter múltiples caracteres a los bra-kets cuánticos:
+\begin{equation}
+    j_{\mu}(0)=\bra{k',r}\hat{j_{\mu}}(0)\ket{k,s}=-e\Bar{u}(k',r)\gamma_{\mu} u(k,s).
+\end{equation}
+Ahora, les subo una imagen de Sydney Sweeney \ref{Sydney}, mostrándoles que las descripciones de las imágenes pueden ser tan largas como se necesite.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Sydney.jpg}\\
+  \caption{\footnotesize Sydney Sweeney. Las descripciones pueden introducirse como texto estándar, incluso se puede citar en ellas~\cite{Barone}.}
+\label{Sydney}
+\end{center}
+\end{figure}
+
+Para escribir un procedimiento en varias lineas, de modo que estén alineados los símbolos de igualdad y sólo aparezcan las ecuaciones a la derecha de este, les dejo este ejemplo, donde la pauta de alineación, es decir, el $=$ está siempre encerrado entre símbolos ampersand. En la última línea aparece el comando \textit{cancelto} que muestra una flecha de cancelación. Lo que está en las llaves después del comando es en lo que se convierte la expresión que se va a cancelar, en este ejemplo, un 1. Tras eso, en las siguientes llaves, deberá aparecer lo que cancelaremos.
+\begin{eqnarray}
+    W_{\mu \nu}&=&\frac{1}{4\pi}\sum_X \int d^4 \xi  e^{i\xi \cdot (P+q-p_X)} \bra{P,s}\hat{J_{\mu}^{\dagger}}(0)\ket{X}
+    \bra{X}\hat{J_{\nu}}(0)\ket{P,s} \nonumber\\
+%
+    &=&\frac{1}{4\pi} \int  \sum_X d^4 \xi e^{i\xi \cdot q}
+    e^{i\xi \cdot (P-p_X)}\bra{P,s}\hat{J_{\mu}^{\dagger}}(0)\ket{X}
+    \bra{X}\hat{J_{\nu}}(0)\ket{P,s} \nonumber\\
+%
+    &=&\frac{1}{4\pi} \int \sum_X d^4 \xi e^{i\xi \cdot q}
+    \bra{P,s}\hat{J_{\mu}^{\dagger}}(\xi)\ket{X}
+    \bra{X}\hat{J_{\nu}}(0)\ket{P,s} \nonumber\\
+%
+    &=&\frac{1}{4\pi} \int d^4 \xi e^{i\xi \cdot q} \bra{P,s}\hat{J_{\mu}^{\dagger}}(\xi) \cancelto{1}{\sum_X \ket{X}\bra{X}}\hat{J_{\nu}}(0)\ket{P,s} .
+    \label{ec:label}
+\end{eqnarray}
+
+
+
+Ahora, acá les dejo cómo hacer una lista numerada en Latex. 
+
+Razones por las que Sydney Sweeney es la actriz favorita de Armónicos Esféricos
+\begin{enumerate}
+   \item Sus ojos.
+    \item Su cabello.
+    \item Su carisma.
+    \item Su actuación que hace que te caiga bien.
+    \item Que le gusten las galletas de chocolate.
+    \item \textit{Razones obvias}.
+\end{enumerate}
+
+\section{Conejitos relativistas}\label{sec:pdf}
+A veces el tamaño por default de los paréntesis, corchetes o llaves de Latex se quedan pequeños cuando intentan encerrar objetos extensos como fracciones. Para evitar que la fracción se vea más grande que los paréntesis, recomiendo anteponer los comandos \textit{left} y \textit{right}. Miren este ejemplo:
+\begin{equation}
+    r^{\mu}r^{\nu}=\left[p^{\mu}-\left(\frac{p\cdot q}{q^2}\right)q^{\mu}\right]
+    \left[p^{\nu}-\left(\frac{p\cdot q}{q^2}\right)q^{\nu}\right].
+\end{equation} \label{W1}
+Y ya...si tienen conejitos en casa cuídenlos y denles mucho amor.
+
+\section{Libros de Griffiths} \label{sec:cono}
+¿Se han dado cuenta que mi serie de electromagnetismo es prácticamente un video-libro del texto \text{Introduction into Electrodynamics} escrito por Griffiths?
+\section{Cerditos y cuyos}\label{sec:suma}
+Los conejos, los cerditos y los cuyos son los mejores animales de la galaxia y no estoy dispuesto a debatirlo. Por cierto, noten como este formato de Latex hace que, aunque las secciones sean muy pequeñas les da el espacio suficiente de modo que los capítulos empiecen al inicio de las hojas y no a la mitad. Asimismo, para las secciones, aunque estas si pueden iniciar en cualquier punto se la página, si es posible, el código la colocará también al principio de la hoja. Esto es automático. Ustedes no tienen qué configurarlo. 
+%%%%%%%%%%%%%%%%Fin del primer capítulo
+
+
+\chapter{Estudio específico del tema} \label{cap3}
+
+\section{Manim con 3b1b}\label{sec:int}
+
+Lo bueno es que 3b1b hizo su software estilo código abierto y su comunidad le ha hecho mejoras. Nunca me habría atrevido a hacer videos si no hubiera conocido su software.
+
+\section{Hoja de ruta del canal}\label{sec:descr}
+Los videos que subo jamás son improvisados, siempre hay un plan coherente que defina qué se subirá y a dónde llegarán. Por eso sé cuáles son los ``spoilers'' de las series largas del canal, aunque ni siquiera tengan guión.
+
+\section{Escritura de guiones} \label{sec:bag}
+En esta sección, el título estará de adorno, porque les enseñaré a hacer diversas estructuras matemáticas. Empecemos con las sumas con múltiples símbolos bajo ella. Vean el código, está fácil. Noten que en la primera línea hay dos ampersand seguidos antes del símbolo de tres líneas de equivalencia $\equiv$ y en la segunda línea hay otros dos antes del bra $\bra{0}$. Eso significa que ambos renglones se van a alinear, de modo que el inicio de la segunda línea, el bra, estará justo debajo del símbolo de equivalencia.
+%
+\begin{eqnarray}
+    X^{q;\lambda,\lambda'}_{\Lambda,\Lambda'}&&\equiv -\frac{1}{18}
+    \sum_{\substack{M \neq N \neq P\\Q \neq R \neq S}}\epsilon_
+    {MNP}\epsilon_{QRS} \times \nonumber\\
+    &&\bra{0}[b_{u,\Lambda'}^M
+    b_{u,\Lambda'}^Nb_{d,-\Lambda'}^P-b_{u,\Lambda'}^M
+    b_{u,-\Lambda'}^Nb_{d,\Lambda'}^P]b_{q,\lambda'}^{\dagger}
+    b_{q,\lambda}[b_{u,\Lambda}^{\dagger Q}
+    b_{u,\Lambda}^{\dagger R}b_{d,-\Lambda}^{\dagger S}-b_{u,\Lambda}^{\dagger Q}
+    b_{u,-\Lambda}^{\dagger R}b_{d,\Lambda}^{\dagger S}]\ket{0}\nonumber\\ \label{C}
+\end{eqnarray}
+%
+y recuerden que, para saber cómo escribir los símbolos de Latex, pueden consultar 
+
+https://metodos.fam.cie.uva.es/~latex/apuntes/apuntes3.pdf 
+
+y descargar el archivo si les hace falta.
+
+
+Ahora, aquí les dejo el código para hacer una tabla. La \textit{H} después de \textit{table} fija la tabla justo después del párrafo anterior. El comando \textit{centering} coloca la tabla en el centro de la página. Las \textit{c} después de \textit{tabular} indica que serán dos columnas. 
+El comando \textit{hline} marca las líneas horizontales de la tabla. Lo pueden poner tras los saltos de línea, para marcar bien las celdas. En este ejemplo, sólo los puse al inicio y al final para abrir y cerrar las tablas. El \textit{caption} es para asignar etiqueta y el pie de tabla.
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+$X^{d;\downarrow,\downarrow}_{++}=\frac{2}{3}$ & $X^{d;\uparrow,\uparrow}_{++}=\frac{1}{3}$\\
+$X^{u;\downarrow,\downarrow}_{++}=\frac{1}{3}$ & $X^{u;\uparrow,\uparrow}_{++}=\frac{5}{3}$\\
+$X^{d;\downarrow,\downarrow}_{--}=\frac{1}{3}$ & $X^{d;\uparrow,\uparrow}_{--}=\frac{2}{3}$\\
+$X^{u;\downarrow,\downarrow}_{--}=\frac{5}{3}$ & $X^{u;\uparrow,\uparrow}_{--}=\frac{1}{3}$\\
+\hline
+\end{tabular}
+\caption{Coeficientes de sabor-spin.}\label{cuadro}
+\end{table} 
+
+En este otro ejemplo les muestro cómo hacer ecuaciones con múltiples expresiones unidos por una llave con el comando \textit{aligned}:
+
+\begin{equation}
+    \chi_{\lambda'}^{\dagger}\sigma^2\chi_{\lambda}
+    \left\{
+    \begin{aligned}
+    \chi_{\uparrow}^{\dagger}\sigma^2\chi_{\uparrow}=i\begin{bmatrix}
+    1 & 0\\
+    \end{bmatrix}\begin{bmatrix}
+    0 & -1\\
+    1 & 0\\
+    \end{bmatrix}\begin{bmatrix}
+    1\\
+    0\\
+    \end{bmatrix} & = 0\\
+    \chi_{\uparrow}^{\dagger}\sigma^2\chi_{\downarrow}=i\begin{bmatrix}
+    1 & 0\\
+    \end{bmatrix}\begin{bmatrix}
+    0 & -1\\
+    1 & 0\\
+    \end{bmatrix}\begin{bmatrix}
+    0\\
+    1\\
+    \end{bmatrix} & = -i\\
+    \chi_{\downarrow}^{\dagger}\sigma^2\chi_{\uparrow}=i\begin{bmatrix}
+    0 & 1\\
+    \end{bmatrix}\begin{bmatrix}
+    0 & -1\\
+    1 & 0\\
+    \end{bmatrix}\begin{bmatrix}
+    1\\
+    0\\
+    \end{bmatrix} & = i\\
+    \chi_{\downarrow}^{\dagger}\sigma^2\chi_{\downarrow}=i\begin{bmatrix}
+    0 & 1\\
+    \end{bmatrix}\begin{bmatrix}
+    0 & -1\\
+    1 & 0\\
+    \end{bmatrix}\begin{bmatrix}
+    0\\
+    1\\
+    \end{bmatrix} & = 0\\
+    \end{aligned}
+    \right. \nonumber
+\end{equation}
+
+\section{Wondershare Filmora como programa de edición}\label{sec:twist}
+Hay que pagar la licencia permanente y una membresía para efectos y material de stock premium, pero lo vale. Por eso mi edición es tan bonita.
+
+\chapter{Enfoque en el trabajo propio}\label{cap4}
+Aquí va el trabajo de ustedes, su investigación propia. Por favor, háganlo bien o acabarán siendo otro Capitán Gravedad.
+\section{Abrir una cuenta de Gmail} 
+\label{sec:ecl}
+Para hacer un canal de YouTube necesitan Gmail.
+
+\section{Abrir cuenta de Adsense}
+\label{sec:eci}
+Y para que YouTube les pague, deben hacerse una cuenta de Adsense. ¿Sabían que pagan impuestos en EUA aunque no lo sepan? El IRS se los cobra cuando YouTube les pone el pago.
+
+\section{Grabación y edición de un video}
+\label{sec:e}
+Esto es super tardado, más en la serie de Relatividad. Tuve que tunear mi laptop hace poco, porque el renderizado se había vuelto lento.
+
+\section{Métricas clave en YouTube}
+\label{sec:ev}
+Lo que importa son las vistas, no los suscriptores. Y de esas vistas, importa cuánto tiempo se queden viendo el video. No vale tener muchas vistas sólo para que le pongan pausa al segundo de haber empezado y sólo entren para insultar. ¿Sabían que de toda la gente a la que les salen sus miniaturas, entre 1\% y el 10\% entrarán al video? La tasa de clicks del canal es de 4\%.
+
+\chapter{Conclusiones}\label{cap5}
+Aquí van las conclusiones. Algo debieron aprender de hacer la tesis. No se hacen tesis sólo por que sí...¿verdad?
+\appendix
+
+
+\chapter{Series largas planeadas}\label{appC}
+Aquí van los apéndices. Si el Capitán Gravedad hubiera sido serio, aquí es donde debería ir su dichoso artículo donde deducía su fórmula. Puro humo.
+\chapter{Series cortas planeadas}
+\label{D}
+Otro anexo. No es forzoso tenerlos en sus tesis. Y no hay un número fijo de anexos aceptable. Ustedes metan los que tengan que meter. Después de esto, les muestro la bibliografía.
+\begin{thebibliography}{99}
+%\cite{Lancaster}
+\bibitem{Lancaster} T. Lancaster, S. Blundell, \textit{Quantum Field Theory for the Gifted Amateur}, Oxford University Press, 2014.
+
+%\cite{Roberts}
+\bibitem{Roberts} R. G. Roberts, \textit{The structure of the proton}, Cambridge University Press, 1990.
+
+%\cite{Aitchison}
+\bibitem{Aitchison} I. J. R. Aitchison, A. J. G. Hey, \textit{Gauge theory in particle physics}, IoP Publishing Ltd, 2003.
+
+%\cite{Jaffe}
+\bibitem{Jaffe}
+R.~L.~Jaffe,
+\textit{Spin, twist and hadron structure in deep inelastic processes},
+[arXiv:hep-ph/9602236 [hep-ph]].
+%228 citations counted in INSPIRE as of 30 Nov 2021
+
+%\cite{Barone}
+\bibitem{Barone}
+V.~Barone, A.~Drago, P.~G.~Ratcliffe,
+\textit{Transverse polarisation of quarks in hadrons},
+Phys. Rept. \textbf{359} (2002), 1-168
+doi:10.1016/S0370-1573(01)00051-5
+[arXiv:hep-ph/0104283 [hep-ph]].
+%563 citations counted in INSPIRE as of 03 Nov 2021
+
+%\cite{Griffiths}
+\bibitem{Griffiths}
+D. Griffiths, \textit{Introduction to Elementary Particles}, Wiley-VCH, 2008.
+
+\end{thebibliography}
+\end{document}
